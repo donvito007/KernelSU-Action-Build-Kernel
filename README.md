@@ -1,3 +1,35 @@
+What kind of warehouse is this
+Leverage Github Action to build kernels, which currently support 4.19 and 4.14.
+
+How to use
+1. Fork this repository to your own account
+2. Modify config.env, here is the following explanation of config:
+config.env	interpretation
+USE_CONFIG	When changed to true, it means that the kernel is built with a configuration file, do not move
+KERNEL_SOURCE	Kernel source code, generally linked to GitHub
+KERNEL_SOURCE_BRANCH	You want to use kernel source branches, because there may be multiple branches under a single source
+KERNEL_DEFCONFIG	The defconfig location of the kernel
+KERNEL_FILE	The output form of the kernel file can be changed to Image or Image.gz or Image.gz-dtb
+CLANG_VERSION	The version of the Clang compiler you want to use
+EXTRA_BUILD_COMMAND	Additional compilation parameters that some kernels require to compile, modify or add on their own. Note that each parameter here must be followed by a space and then the new parameter must be written. For example, a=a b=b
+3. After the parameters are modified, click Star to trigger the build. The time is about 25 minutes. The product is in Action and downloaded by itself.
+Note that the kernel includes KernelSU by default. For stability, I didn't turn on KPROBES, which means that if you want to use KernelSU, you have to patch it yourself. For how to patch kernel source code, please refer to: How to integrate KernelSU for non-GKI devices.
+The kernel has turned off device checking, please do not flash the kernel across devices.
+The version of Clang that is already supported
+Clang version	Corresponds to the Android version	AOSP-Clang version
+12.0.5	Android S	r416183b
+14.0.6	Android T	r450784d
+14.0.7		r450784e
+It is recommended to use Clang 14.0.7, of course, you can also choose the version you like
+
+EXTRA_BUILD_COMMAND Additional compilation parameter reference
+Additional compilation parameter reference
+LD=ld.lld
+LLVM=1
+LLVM_IAS=1
+Thanks
+XiaoleGun Github-Action
+tiann KernelSU
 # 这是什么仓库
 利用Github Action来构建内核，目前支持4.19和4.14。
 
