@@ -91,10 +91,15 @@ jobs:
         cd $GITHUB_WORKSPACE/kernel_workspace
         git clone ${{ env.KERNEL_SOURCE }} -b ${{ env.KERNEL_SOURCE_BRANCH }} android-kernel --depth=1
 
-    - name: Add KernelSU( Must Patch Before Build )
+    - name: Setup KernelSU
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace/android-kernel
-        curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -
+        curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s ${{ env.KERNELSU_TAG }}
+        if [ ${{ env.USE_KPROBES }} = true ]; then
+            echo "CONFIG_KPROBES=y" >> arch/arm64/configs/${{ env.KERNEL_DEFCONFIG }}
+            echo "CONFIG_HAVE_KPROBES=y" >> arch/arm64/configs/${{ env.KERNEL_DEFCONFIG }}
+            echo "CONFIG_KPROBE_EVENTS=y" >> arch/arm64/configs/${{ env.KERNEL_DEFCONFIG }}
+        fi
 
     - name: Build kernel
       run: |
