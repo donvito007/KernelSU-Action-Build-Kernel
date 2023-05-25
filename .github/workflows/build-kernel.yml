@@ -83,8 +83,8 @@ jobs:
         wget https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/master/clang-r487747c.tar.gz
         tar -C clang-aosp/ -zxvf clang-r487747c.tar.gz
         mkdir gcc-aosp
-        wget https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/+archive/961622e926a1b21382dba4dd9fe0e5fb3ee5ab7c.tar.gz
-        tar -C gcc-aosp/ -zxvf 961622e926a1b21382dba4dd9fe0e5fb3ee5ab7c.tar.gz
+        wget https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/+archive/refs/tags/android-13.0.0_r0.72.tar.gz
+        tar -C gcc-aosp/ -zxvf android-13.0.0_r0.72.tar.gz
 
     - name: Download Kernel Source
       run: |
