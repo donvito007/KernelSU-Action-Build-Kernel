@@ -8,19 +8,19 @@ on:
       KERNEL_SOURCE:
         description: 'Kernel Source'
         required: true
-        default: 'https://github.com/liqidecg/android_kernel_xiaomi_sdm710'
+        default: 'https://github.com/donvito007/InfiniR_kernel_alioth'
       KERNEL_SOURCE_BRANCH:
         description: 'Branch'
         required: true
-        default: 'lineage-20'
+        default: '13.0-alioth'
       KERNEL_DEFCONFIG:
         description: 'Defconfig'
         required: true
-        default: 'xiaomi/sirius.config'
+        default: 'vendor/alioth_defconfig'
       KERNEL_FILE:
         description: 'Your kernel out image name'
         required: true
-        default: 'Image.gz'
+        default: 'Image'
       CLANG_VERSION:
         description: 'Clang version'
         required: true
