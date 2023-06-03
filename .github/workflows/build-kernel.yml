@@ -8,11 +8,11 @@ on:
       KERNEL_SOURCE:
         description: 'Kernel Source'
         required: true
-        default: 'https://github.com/donvito007/neko_kernel_xiaomi_gauguin'
+        default: 'https://github.com/blue-toxic/kernel_xiaomi_gauguin'
       KERNEL_SOURCE_BRANCH:
         description: 'Branch'
         required: true
-        default: 'main'
+        default: 'master'
       KERNEL_DEFCONFIG:
         description: 'Defconfig'
         required: true
@@ -20,7 +20,7 @@ on:
       KERNEL_FILE:
         description: 'Your kernel out image name'
         required: true
-        default: 'Image.gz-dtb'
+        default: 'Image'
       CLANG_VERSION:
         description: 'Clang version'
         required: true
