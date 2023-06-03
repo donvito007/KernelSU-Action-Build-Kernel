@@ -8,19 +8,19 @@ on:
       KERNEL_SOURCE:
         description: 'Kernel Source'
         required: true
-        default: 'https://github.com/donvito007/InfiniR_kernel_alioth'
+        default: 'https://github.com/donvito007/neko_kernel_xiaomi_gauguin'
       KERNEL_SOURCE_BRANCH:
         description: 'Branch'
         required: true
-        default: '13.0-alioth'
+        default: 'main'
       KERNEL_DEFCONFIG:
         description: 'Defconfig'
         required: true
-        default: 'vendor/alioth_defconfig'
+        default: 'vendor/gauguin_user_defconfig'
       KERNEL_FILE:
         description: 'Your kernel out image name'
         required: true
-        default: 'Image'
+        default: 'Image.gz-dtb'
       CLANG_VERSION:
         description: 'Clang version'
         required: true
