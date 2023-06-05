@@ -8,19 +8,19 @@ on:
       KERNEL_SOURCE:
         description: 'Kernel Source'
         required: true
-        default: 'https://github.com/donvito007/kernel_xiaomi_gauguin-perf'
+        default: 'https://github.com/donvito007/NGK_android_kernel_xiaomi_sdm845'
       KERNEL_SOURCE_BRANCH:
         description: 'Branch'
         required: true
-        default: 'main'
+        default: 'q-caf'
       KERNEL_DEFCONFIG:
         description: 'Defconfig'
         required: true
-        default: 'vendor/gauguin_user_defconfig'
+        default: 'dipper_defconfig'
       KERNEL_FILE:
         description: 'Your kernel out image name'
         required: true
-        default: 'Image'
+        default: 'Image.gz'
       CLANG_VERSION:
         description: 'Clang version'
         required: true
