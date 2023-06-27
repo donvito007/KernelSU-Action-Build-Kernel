@@ -8,19 +8,19 @@ on:
       KERNEL_SOURCE:
         description: 'Kernel Source'
         required: true
-        default: 'https://github.com/donvito007/NGK_android_kernel_xiaomi_sdm845'
+        default: 'https://github.com/Danda420/kernel_xiaomi_sm8250'
       KERNEL_SOURCE_BRANCH:
         description: 'Branch'
         required: true
-        default: 'q-caf'
+        default: 'main'
       KERNEL_DEFCONFIG:
         description: 'Defconfig'
         required: true
-        default: 'dipper_defconfig'
+        default: 'vendor/stock_defconfig'
       KERNEL_FILE:
         description: 'Your kernel out image name'
         required: true
-        default: 'Image.gz'
+        default: 'Image'
       CLANG_VERSION:
         description: 'Clang version'
         required: true
@@ -28,11 +28,11 @@ on:
       BUILD_EXTRA_COMMAND:
         description: 'Extra build commands(e.g. LLVM=1 LLVM_IAS=1)'
         required: false
-        default: 'LD=ld.lld'
+        default: 'LLVM=1 LLVM_IAS=1'
       DISABLE-LTO:
         description: 'Disable LTO'
         required: false
-        default: 'false'
+        default: 'true'
         type: boolean
       USE_KERNELSU:
         description: 'Use KernelSU'
